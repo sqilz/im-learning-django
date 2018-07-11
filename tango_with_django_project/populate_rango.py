@@ -1,9 +1,10 @@
-from rangoapp.models import Category, Page
-import os.environ.setdefault('DJANGO_SETTINGS_MODULE'
-                             import
-                             'tango_with_django_project.settings')
+import os
+os.environ.setdefault('DJANGO_SETTINGS_MODULE',
+                      'tango_with_django_project.settings')
+
 import django
 django.setup()
+from rangoapp.models import Category, Page
 
 
 def populate():
@@ -52,12 +53,11 @@ def populate():
         }
     ]
 
-
-cats = {
-    "Python": {"pages": python_pages},
-    "Django": {"pages": django_pages},
-    "Other Frameworks": {"pages": other_pages}
-}
+    cats = {
+        "Python": {"pages": python_pages},
+        "Django": {"pages": django_pages},
+        "Other Frameworks": {"pages": other_pages}
+    }
 # If you want to add mroe categories or pages,
 # add them to the dictionaries above
 
@@ -67,15 +67,15 @@ cats = {
 # http://docs.quantifiedcode.com/python-anti-patterns/readability/
 # for more information about hwo to iterate over a dictionary properly
 
-for cat, cat_data in cats.items():
-    c = add_cat(cat)
-    for p in cat_data["pages"]:
-        add_page(c, p["title"], p["url"])
+    for cat, cat_data in cats.items():
+        c = add_cat(cat)
+        for p in cat_data["pages"]:
+            add_page(c, p["title"], p["url"])
 
-# Print out the categories we have added
-for c in Category.objects.all():
-    for p in Page.objects.ilter(category=c):
-        print("- {0} - {1}".format(str(c), str(p)))
+    # Print out the categories we have added
+    for c in Category.objects.all():
+        for p in Page.objects.filter(category=c):
+            print("- {0} - {1}".format(str(c), str(p)))
 
 
 def add_page(cat, title, url, views=0):
