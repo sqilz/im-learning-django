@@ -6,7 +6,7 @@ from django.db import models
 class Category(models.Model):
     name = models.CharField(max_length=128, unique=True)
 
-    class class Meta:
+    class Meta:
         # Fix typo 'Categorys' to Categories in admin page
         verbose_name_plural = 'Categories'
 
