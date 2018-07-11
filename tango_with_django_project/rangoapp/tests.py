@@ -45,7 +45,8 @@ class IndexPageTests(TestCase):
 class AboutPageTests(TestCase):
 
     def test_about_contains_create_message(self):
-        # Check if in the about page is there - and contains the specified message
+        # Check if in the about page is there - and contains the specified
+        # message
         # Exercise from Chapter 4
         response = self.client.get(reverse('about'))
         self.assertIn(
