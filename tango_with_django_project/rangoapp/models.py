@@ -17,7 +17,7 @@ class Category(models.Model):
 
     class Meta:
         # Fix typo 'Categorys' to Categories in admin page
-        verbose_name_plural = 'Categories'
+        verbose_name_plural = 'categories'
 
     def __str__(self):  # For Python 2, use __unicode __too
         return self.name
