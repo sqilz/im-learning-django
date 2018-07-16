@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Rango</title>
-</head>
+    <head>
+        <title>Rango</title>
+    </head>
     <body>
-        <h1>Add a Cetegory</h1>
+        <h1>Add a Category</h1>
         <div>
             <form id="category_form" method="post" action="/rangoapp/add_category/">
                 {% csrf_token %}
@@ -17,7 +17,7 @@
                     {{ field }}
                 {% endfor %}
                 <input type="submit" name="submit" value="Create Category" />
-            </form>
+            </form>            
         </div>
     </body>
 </html>
