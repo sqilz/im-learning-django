@@ -15,7 +15,9 @@
             <ul>
                 {% for category in categories %}
                     <li>
-                        <a href="/rangoapp/category/{{ category.slug }}">{{ category.name }}</a>
+                       <a href="{% url 'show_category' cateory.slug %}">
+                           {{ category.name }}
+                        </a>
                     </li>
                 {% endfor %}
             </ul>
