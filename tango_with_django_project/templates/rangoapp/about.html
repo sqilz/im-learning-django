@@ -1,14 +1,11 @@
-<!DOCTYPE html>
+{% extends 'rangoapp/base.html' %}
 {% load staticfiles  %}
-<html>
-<head>
-    <title>about</title>
-</head>
-<body>
-    <div>
+
+{% block body_block %}
+<div>
     <span>Thsi tutorial has been put together by {{ me }}</span>
-    <img src="{{ MEDIA_URL }}cat.jpg"
-         alt="test" />
-        </div>
-</body>
-</html>
+    <img src="{{ MEDIA_URL }}cat.jpg" alt="test" />
+</div>
+{% endblock body_block %}
+
+
